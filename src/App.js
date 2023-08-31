@@ -1,7 +1,8 @@
-import "./App.css";
+import "./index.css";
+import Body from "./components/Body";
 
 function App() {
-  return <div className="bg-slate-500">Namaste everyone |</div>;
+  return <Body />;
 }
 
 export default App;
