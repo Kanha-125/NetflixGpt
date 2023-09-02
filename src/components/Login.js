@@ -81,14 +81,18 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute">
-        <img src={BG_URL} alt="logo" />
+      <div className="fixed">
+        <img
+          className="h-screen object-cover md:h-full"
+          src={BG_URL}
+          alt="logo"
+        />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="w-3/12 absolute p-12 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
+        className="md:w-3/12 w-11/12 absolute px-12 py-4 bg-black my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80 "
       >
-        <h1 className="font-bold text-3xl py-4">
+        <h1 className="font-bold text-2xl md:text-3xl py-2">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
 
@@ -110,11 +114,11 @@ const Login = () => {
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="p-4 my-2 w-full bg-gray-700"
         />
         <p className="text-red-500 font-bold text-lg py-2">{errorMessage}</p>
         <button
-          className="p-4 my-6 bg-red-700 w-full rounded-lg"
+          className="p-4 my-2 bg-red-700 w-full rounded-lg"
           onClick={handleButtonClick}
         >
           {isSignInForm ? "Sign In" : "Sign Up"}

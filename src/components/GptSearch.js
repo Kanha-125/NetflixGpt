@@ -4,13 +4,19 @@ import GptMovieSuggestions from "./GptMovieSuggestions";
 import { BG_URL } from "../utils/constants";
 const GptSearch = () => {
   return (
-    <div>
-      <div className="fixed -z-10">
-        <img src={BG_URL} alt="logo" />
+    <>
+      <div className="fixed -z-10 w-full ">
+        <img
+          src={BG_URL}
+          alt="logo"
+          className="h-screen object-cover md:h-auto"
+        />
       </div>
-      <GptSearchBar />
-      <GptMovieSuggestions />
-    </div>
+      <div className="">
+        <GptSearchBar />
+        <GptMovieSuggestions />
+      </div>
+    </>
   );
 };
 
