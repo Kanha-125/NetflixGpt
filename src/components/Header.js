@@ -52,10 +52,10 @@ const Header = () => {
     <div className="absolute w-screen px-8 py-2 bg-gradient-to-b from-black z-10 flex justify-between flex-col md:flex-row">
       <img className="w-44 mx-auto md:mx-0" src={LOGO} alt="logo" />
       {user && (
-        <div className="flex p-2 items-center justify-between">
+        <div className="flex p-2 items-center justify-between ">
           {showGptSearch && (
             <select
-              className="p-1 bg-gray-900 text-white m-2"
+              className="p-1 bg-gray-900 text-white m-2 md:block hidden"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -66,18 +66,21 @@ const Header = () => {
             </select>
           )}
           <button
-            className="py-2 px-4 mx-4 my-2 bg-purple-800 text-white rounded-lg"
+            className="py-2 px-4 mx-4 my-2 bg-purple-800 hover:bg-purple-600 text-white rounded-lg"
             onClick={handleGPTSearchClick}
           >
             {showGptSearch ? "Home Page" : " GPT Search"}
           </button>
           <img
-            className="w-10 h-10 hidden md:block"
+            className="w-10 h-10 hidden md:block rounded-sm"
             alt="usericon"
             src={user?.photoURL}
           />
-          <button onClick={handleSignOut} className="font-bold text-white ml-">
-            (Sign Out)
+          <button
+            onClick={handleSignOut}
+            className="text-white ml-2 hover:bg-pink-600 bg-pink-800 p-2 rounded"
+          >
+            Sign Out
           </button>
         </div>
       )}

@@ -5,8 +5,7 @@ import { useSelector } from "react-redux";
 const VideoBackground = ({ movieId }) => {
   const trailorVideo = useSelector((store) => store.movies.trailerVideo);
   useMovieTrailer(movieId);
-  // "?&autoplay=1&mute=1";
-
+  // "?&autoplay=1&mute=1"
   return (
     <div className="w-screen">
       <iframe
